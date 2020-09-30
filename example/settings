@@ -1,0 +1,11 @@
+# Settings file
+
+name_prefix=case_name
+input_file=points.csv
+output_file=results.csv
+case_input_file=solver_input.csv
+case_output_file=solver_output.csv
+case_start=1
+case_end=3
+case_sim=2
+case_script=submit_case.sh
