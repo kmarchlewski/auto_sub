@@ -97,7 +97,6 @@ fi
 ## Calculations
 
 [ -d cases ] || mkdir cases
-[ -f $output_file ] || echo "$(cat $input_file | sed "1q;d");f" > $output_file
 
 for i in $(seq $case_start $case_end)
 do
