@@ -1,0 +1,12 @@
+# Settings file
+
+name_prefix=case_name
+input_file=points.csv
+output_file=results.csv
+pkg_input_file=solver_input.csv
+pkg_output_file=solver_output.csv
+case_start=1
+case_end=30
+pkg_simult=2
+pkg_size=10
+pkg_script=submit_pkg.sh

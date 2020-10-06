@@ -1,6 +1,6 @@
-# auto_sub
+# auto_sub.sh
 
-Repozytorium zawiera skrypt służący do automatycznego dodawania zadań na klastrach zarządzanych przez system kolejkowy "slurm".
+Skrypt służący do automatycznego dodawania zadań na klastrach zarządzanych przez system kolejkowy "slurm".
 
 ## Zasada działania
 
@@ -31,6 +31,16 @@ Plik z ustawieniami powinien zawierać wartości zmiennych:
 - case_sim (maksymalna liczba jednoczesnych zadań)
 - case_script (nazwa skryptu uruchamiającego pojedyncze zadanie)
 
-## Przykład
+## Przykład 1
 
-Katalog "example" zawiera pliki, które można wykorzystać do uruchomienia przykładowego procesu.
+Katalog "example_1" zawiera pliki, które można wykorzystać do uruchomienia przykładowego procesu.
+
+# auto_sub_pkg.sh
+
+Skrypt służący do automatycznego dodawania zadań na klastrach zarządzanych przez system kolejkowy "slurm".
+Zadania dodawane są w "paczkach" co jest wygodne w przypadku kiedy trzeba wykonać bardzo dużo symulacji (np. w przypadku analiz Monte Carlo).
+
+## Przykład 2
+
+Katalog "example_2" zawiera pliki, które można wykorzystać do uruchomienia przykładowego procesu.
+
