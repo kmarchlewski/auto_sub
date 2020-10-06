@@ -33,7 +33,7 @@ copy_template ()
 
   echo "Directory cases/$1 prepared."
 
-  return 1
+  return 0
 }
 
 add_finish_line ()
@@ -53,6 +53,8 @@ add_finish_line ()
     rm ../../${output_file}.lock
   fi
   " >> $1
+
+  return 0
 }
 
 ## Basic tests
