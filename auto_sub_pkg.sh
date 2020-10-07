@@ -109,9 +109,11 @@ fi
 
 [ -d pkgs ] || mkdir pkgs
 
-pkg_number=$(expr $(expr $case_end - $case_start + 1 ) / $pkg_size )
-case_first=1
-case_last=$pkg_size
+pkg_number=$(( ($case_end - $case_start + 1) / $pkg_size ))
+[ $(( ($case_end - $case_start + 1) % $pkg_size )) -eq 0 ] || pkg_number=$(expr $pkg_number + 1)
+
+case_first=$case_start
+case_last=$(expr $case_first + $pkg_size - 1)
 
 for i in $(seq 1 $pkg_number)
 do
@@ -134,16 +136,12 @@ do
   add_finish_line $pkg_script
   sbatch -J "${name_prefix}-pkg_$i" $pkg_script
 
-  echo "Case $i in progress..."
+  echo "Package $i in progress..."
   cd ../..
 
-  case_first=$(expr $case_first + $pkg_size )
-  case_last=$(expr $case_last + $pkg_size )
-  if [ $case_last -gt $case_end ]
-  then
-    case_last=$case_end
-  fi
+  case_first=$(expr $case_last + 1)
+  case_last=$(expr $case_last + $pkg_size)
+  [ $case_last -gt $case_end ] && case_last=$case_end
 done
-
 
 
